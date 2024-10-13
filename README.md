@@ -32,7 +32,7 @@ In the new project, goto clone with HTTPS section and copy the url
 ```
 git clone https://github.com/tklenke/new-repository.git
 ```
-
+ 
 ###initial set python environment
 ```
 virtualenv myprojectenv
