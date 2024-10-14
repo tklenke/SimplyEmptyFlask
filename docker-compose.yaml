@@ -1,0 +1,22 @@
+
+services:
+  flask:
+    build: .
+    container_name: simplyemptyflask
+    ports:
+      - "8000:8000"
+    #add restart directive at your option for server installs
+    #restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_reverse_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./server/nginx_docker.conf:/etc/nginx/nginx.conf:ro
+    #add restart directive at your option for server installs
+    #restart: unless-stopped
+
+
