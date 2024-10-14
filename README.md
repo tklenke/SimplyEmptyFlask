@@ -1,6 +1,7 @@
 # Empty Simple Flask Project with Notes.
 
 These are my notes on how to get a new project rolling.
+[For Docker Install go here](#Docker-Installation)
 
 ### server set up
 ```
@@ -74,6 +75,18 @@ sudo ln -s /etc/nginx/sites-available/simpleapp /etc/nginx/sites-enabled
 sudo systemctl restart nginx
 sudo ufw allow 'Nginx Full'
 ```
+
+## Docker Installation
+### Build and run flask conatiner
+```
+docker build -t simplyemptyflask .
+```
+To run
+```
+docker docker run -d -p 8000:8000 simplyemptyflask
+```
+### Install NGinx container
+TODO
 
 ### Notes
 Find gunicorn log in /
