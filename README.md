@@ -77,7 +77,17 @@ sudo ufw allow 'Nginx Full'
 ```
 
 ## Docker Installation
-### Build and run flask conatiner
+Two options via docker
+  - Full install with nginx using docker compose
+  - Stand alone flask container only
+### Full Docker Install with Nginx using docker compose
+```
+docker-compose build 
+docker-compose up
+``` 
+Site should be available on port 80 of machine.  Note additional config
+required for deployment and ssh.  
+### Stand alone Build and run flask conatiner
 ```
 docker build -t simplyemptyflask .
 ```
@@ -85,18 +95,12 @@ To run
 ```
 docker docker run -d -p 8000:8000 simplyemptyflask
 ```
-### Install NGinx container
-TODO
+To run debug with reload
+```
+./run_debug.sh
+```
+Site available on port 5000
 
-### Notes
-Find gunicorn log in /
 
-### Items to change in new app
-* change .gitignore simpleappenv to newappenv
-* change simpleapp.py to newapp.py
-* change wsgi.py line from simpleapp to newapp
-* change simpleapp.server to newapp
-* change simpleapp.nginx to newapp
-* added server name or ip to newapp.nginx
 
 
